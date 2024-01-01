@@ -1,5 +1,8 @@
 """
-Improve: if someone puts add in prompt, it shall be treated.
+Improve: 
+    if someone puts add in prompt, it shall be treated.
+Challenges:
+    Isolate logic into functions.
 """
 import os
 
@@ -24,7 +27,6 @@ while True:
     command = input("Submit a task or a command(undo, redo, show, exit):\n")
 
     if command == 'undo':
-        print("undo em progresso!")
         task_list = task.readlines()        
         undo_counter = undo_counter - 1
         try:
@@ -77,9 +79,6 @@ while True:
         redo_stock = []
         task.write(f'{command}\n')
         log.write(f'add {command}\n')
-    print("\nFIM DO LOOP")
-    #os.system('cls')
-    print(redo_stock)
-    print(past_commands)
+    os.system('cls')
 log.close()
 task.close()
